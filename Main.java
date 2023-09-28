@@ -119,7 +119,7 @@ public class Main {
 
         System.out.println("Строки, длинна которых меньше средней");
         for (int i = 0; line[i].length() < (lenghtLine/3); i++)
-            System.out.println(line[i]);
+            System.out.println(line[i] +" "+ line[i].length());
     }
 
     static void task4() {
