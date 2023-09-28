@@ -109,26 +109,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String[] line = new String[3];
-        int[] lenghtLine = new int[3];
+        int lenghtLine = 0;
 
         for (int i = 0; i < 3; i++) {
             System.out.print("Введите строку №" + (i + 1) + ": ");
             line[i] = sc.nextLine();
-            lenghtLine[i] = line[i].length();
+            lenghtLine += line[i].length();
         }
 
-        String temp = "";
-        for (int i = 0; i < 3; i++) {
-            for (int j = i; j < 3; j++)
-                if (line[j].length() < line[i].length()) {
-                    temp = line[i];
-                    line[i] = line[j];
-                    line[j] = temp;
-                }
-        }
-
-        System.out.println("Строки длинная которых меньше средней");
-        for (int i = 0; !(line[i].equals(temp)); i++)
+        System.out.println("Строки, длинна которых меньше средней");
+        for (int i = 0; line[i].length() < (lenghtLine/3); i++)
             System.out.println(line[i]);
     }
 
